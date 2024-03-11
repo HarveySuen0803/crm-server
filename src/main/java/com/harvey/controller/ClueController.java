@@ -3,6 +3,7 @@ package com.harvey.controller;
 import com.harvey.common.Result;
 import com.harvey.dto.PageDto;
 import com.harvey.service.ActivityService;
+import com.harvey.service.ClueService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/activity")
-public class ActivityController {
+@RequestMapping("/clue")
+public class ClueController {
     @Autowired
-    private ActivityService activityService;
+    private ClueService clueService;
     
     @PostMapping("/page")
-    public Result getActivityByPage(@RequestBody PageDto pageDto) {
+    public Result getClueByPage(@RequestBody PageDto pageDto) {
         log.info("getActivityByPage, {}", pageDto);
-        return activityService.getActivityByPage(pageDto);
+        return clueService.getClueByPage(pageDto);
     }
 }
